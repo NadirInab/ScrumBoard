@@ -11,14 +11,20 @@
 body{
     background-color: #FAF6EF;
 }
-.addTask{
-    background-color:cadetblue ;
+button.addTask{
+    border: 2px solid lightcoral;
+    background-color:#D9CDB8;
+    width: 100px;
 }
 .toDo{
     background-color: rgb(193, 206, 142,0.8);
 }
 .inProgress{
     background-color: rgb(219, 227, 181,0.8);
+}
+.spinner-border{
+    width: 15px; 
+    height: 15px;
 }
 .done{
     background-color: rgb(223, 232, 204,0.8);
