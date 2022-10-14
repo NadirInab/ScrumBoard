@@ -37,9 +37,12 @@ button.addTask{
 }
 .high{
     background-color: #D9CDB8;
-    width: 5vw;
+    min-width: 5vw;
 } 
 .btn{
     border: 2px solid #D9CDB8;
-    width:5vw;
+    min-width:5vw;
+}
+#app{
+    max-width: 100%;
 }
