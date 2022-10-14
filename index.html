@@ -35,15 +35,15 @@
 				</div>
 				
 				<div class="">
-					<button class="btn p-2 border"><i class=""></i> Add Task</button>
+					<button class="btn addTask p-2 border"><i class=""></i> Add Task</button>
 				</div>
 			</div>
 
 		<div class=""> 
-			<div class="d-flex gap-3 border border-2">
+			<div class="d-flex gap-1 border border-2">
 
 					<div style="min-width: 30vw ;" class=" m-2"> 
-						<div  class="condition container border border-top-0 p-2 rounded-2 ">
+						<div  class="toDo container border border-top-0 p-2 rounded-2 ">
 							<h4 class="">To do (<span id="to-do-tasks-count">5</span>)</h4>
 						</div>
 
@@ -51,7 +51,7 @@
 							<!-- TO DO TASKS HERE -->
 							<button class="tasks d-flex m-2">
 
-								<div class="mx-2 ">
+								<div class="mx-2">
 									<img class="h-50 w-auto " src="node_modules/bootstrap-icons/icons/question-circle-fill.svg" alt="">
 								</div>
 
@@ -62,8 +62,8 @@
 										<p class="fw-normal" title="There is hardly anything more frustrating than having to look for current requirements in tens of comments under the actual description or having to decide which commenter is actually authorized to change the requirements. The goal here is to keep all the up-to-date requirements and details in the main/primary description of a task. Even though the information in comments may affect initial criteria, just update this primary description accordingly.">There is hardly anything more frustrating than having t...</p>
 									</div>
 								</div>
-								<div class="mt-4">
-									<span class="high btn m-2">Hightec</span>
+								<div class="mt-3">
+									<span class="high btn m-2">High</span>
 									<span class="btn">Feature</span>
 								</div>
 							</button>
@@ -87,7 +87,7 @@
 									</div>
 								</div>
 								<div class="mt-3">
-									<span class="high btn m-1">Hightec</span>
+									<span class="high btn m-1">High</span>
 									<span class="btn">Feature</span>
 								</div>
 							</button>
@@ -105,7 +105,7 @@
 										<p class="" title="If the expectation is to process or generate some file — attach an example of such 					 file. If the goal is to integrate what is being developed with some service, ensure your devs have access to this service and its documentation. This list could go on and on — the bottom line is — if there is something that our developer might make use of, try to foresee it and provide them with (access to) it.">If the expectation is to process or generate some file ...</p>
 									</div>
 								</div>
-								<div class="">
+								<div class="mt-3">
 									<span class="high btn m-1">High</span>
 									<span class="btn">Feature</span>
 								</div>
@@ -117,13 +117,13 @@
 
 				<div class="">
 					<div style="min-width: 30vw ;"  class="m-2">
-						<div class="condition container border border-top-0 p-2 rounded-2">
+						<div class="inProgress container border border-top-0 p-2 rounded-2">
 							<h4 class="">In Progress (<span id="in-progress-tasks-count">4</span>)</h4>
-
 						</div>
-						<div class="" id="in-progress-tasks">
+
+						<div class="tasksContainer border border-light" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
-							<button class="container d-flex m-2">
+							<button class="tasks d-flex m-2">
 								<div class="mx-2">
 									<i class=""></i> 
 								</div>
@@ -135,24 +135,24 @@
 									</div>
 									
 								</div>
-								<div class="">
+								<div class="mt-3">
 									<span class="high btn m-2">High</span>
 									<span class="btn">Bug</span>
 								</div>
 							</button>
 
-							<button class="container d-flex m-2">
+							<button class="tasks d-flex m-2">
 								<div class="mx-2">
 									<i class=""></i> 
 								</div>
-								<div class="border border-2 text-start p-2">
-									<div class="">Provide access</div>
+								<div class="border border-1 text-start p-2">
+									<p class="">Provide access</p>
 									<div class="">
 										<p class="">#7 created in 2022-10-08</p>
 										<p class="" title="to the affected account and services if possible. It might be hard to reproduce the exact environment on a local machine.">to the affected account and services if possible. It mi...</p>
 									</div>
 								</div>
-								<div class="">
+								<div class="mt-3">
 									<span class="high btn m-2">High</span>
 									<span class="btn">Bug</span>
 								</div>
@@ -163,61 +163,46 @@
 
 
 
-				<div class="">
+				<div class="d-flex">
 					<div style="min-width: 30vw ;" class="m-2">
-						<div class="">
+						<div class="done container border border-top-0 p-2 rounded-2">
 							<h4 class="">Done (<span id="done-tasks-count">4</span>)</h4>
-
 						</div>
 
-						<div class=" " id="done-tasks">
+						<div class="tasksContainer border border-light" id="done-tasks">
 							<!-- DONE TASKS HERE -->
-							<button class="">
-								<div class="">
+							<button class="tasks d-flex m-2">
+								<div class="mx-2">
 									<i class=""></i> 
+									<p>Lorem, ipsum.</p>
 								</div>
-								<div class="">
-									<div class="">Provide access to logs</div>
+								<div class="border border-1 text-start p-2">
+									<p class="fw-bold">Provide access to logs</p>
 									<div class="">
-										<div class="">#10 created in 2022-10-08</div>
-										<div class="" title="as they can be helpful in reproducing the steps that caused the problem in the first place.">as they can be helpful in reproducing the steps that ca...</div>
+										<p class="fw-light">#10 created in 2022-10-08</p>
+										<p class="fw-normal" title="as they can be helpful in reproducing the steps that caused the problem in the first place.">as they can be helpful in reproducing the steps that ca...</p>
 									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
-									</div>
+								</div>
+								<div class="mt-3">
+									<span class="high btn m-2">High</span>
+									<span class="btn">Bug</span>
 								</div>
 							</button>
-							<button class="">
-								<div class="">
+
+							<button class="tasks d-flex m-2">
+								<div class="mx-2">
 									<i class=""></i> 
 								</div>
-								<div class="">
-									<div class="">Provide access to the affected server or database dump</div>
+								<div class="border border-1 text-start p-2">
+									<p class="fw-bold">Provide access to the affected server or database dump</p>
 									<div class="">
-										<div class="">#11 created in 2022-10-08</div>
-										<div class="" title="If it is possible and when it does not violate security policies, it is usually helpful for the developer to access the original data that might have played a role in the problem.">If it is possible and when it does not violate security...</div>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
+										<p class="fw-light">#11 created in 2022-10-08</p>
+										<p class="fw-normal" title="If it is possible and when it does not violate security policies, it is usually helpful for the developer to access the original data that might have played a role in the problem.">If it is possible and when it does not violate security...</p>
 									</div>
 								</div>
-							</button>
-							<button class="">
-								<div class="">
-									<i class=""></i> 
-								</div>
-								<div class="">
-									<div class="">Make a screencast</div>
-									<div class="">
-										<div class="">#12 created in 2022-10-08</div>
-										<div class="" title="It is not always necessary, but many times a short screencast (or at least a screenshot) says more than a thousand words. While working on MacOS you can use QuickTime Player for the purpose but there are plenty of tools available for other operating systems as well.">It is not always necessary, but many times a short scre...</div>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
-									</div>
+								<div class="mt-3">
+									<span class="high btn m-2">High</span>
+									<span class="btn">Bug</span>
 								</div>
 							</button>
 						</div>
@@ -232,7 +217,8 @@
 		</div>
 		<!-- END #content -->
 		
-		
+		link
+
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 		<!-- END scroll-top-btn -->

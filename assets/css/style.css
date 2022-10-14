@@ -11,8 +11,17 @@
 body{
     background-color: #FAF6EF;
 }
-.condition{
-    background-color: rgb(193, 206, 142,0.7);
+.addTask{
+    background-color:cadetblue ;
+}
+.toDo{
+    background-color: rgb(193, 206, 142,0.8);
+}
+.inProgress{
+    background-color: rgb(219, 227, 181,0.8);
+}
+.done{
+    background-color: rgb(223, 232, 204,0.8);
 }
 .tasksContainer{
     background-color: #E6EEC7;
@@ -22,7 +31,9 @@ body{
 }
 .high{
     background-color: #D9CDB8;
+    width: 5vw;
 } 
 .btn{
-    border: 3px solid #D9CDB8;
+    border: 2px solid #D9CDB8;
+    width:5vw;
 }
