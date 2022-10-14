@@ -40,8 +40,9 @@
 			</div>
 
 		<div class=""> 
-			<div class="container d-flex border border-2">
-					<div class=""> 
+			<div class="d-flex gap-3 border border-2">
+
+					<div style="min-width: 30vw ;" class=" m-2"> 
 						<div  class="condition container border border-top-0 p-2 rounded-2 ">
 							<h4 class="">To do (<span id="to-do-tasks-count">5</span>)</h4>
 						</div>
@@ -95,16 +96,13 @@
 							<button class="tasks d-flex m-2">
 								<div class="mx-2">
 									<i class=""></i> 
+									<img class="h-50 w-auto " src="node_modules/bootstrap-icons/icons/question-circle-fill.svg" alt="">
 								</div>
 								<div class="border border-2 text-start p-2">
 									<p class="">Provide examples, credentials, etc</p>
 									<div class="">
 										<p class="">#3 created in 2022-10-08</p>
 										<p class="" title="If the expectation is to process or generate some file — attach an example of such 					 file. If the goal is to integrate what is being developed with some service, ensure your devs have access to this service and its documentation. This list could go on and on — the bottom line is — if there is something that our developer might make use of, try to foresee it and provide them with (access to) it.">If the expectation is to process or generate some file ...</p>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Feature</span>
 									</div>
 								</div>
 								<div class="">
@@ -115,87 +113,63 @@
 						</div>
 				</div>
 
+
+
 				<div class="">
-					<div class="">
-						<div class="">
+					<div style="min-width: 30vw ;"  class="m-2">
+						<div class="condition container border border-top-0 p-2 rounded-2">
 							<h4 class="">In Progress (<span id="in-progress-tasks-count">4</span>)</h4>
 
 						</div>
 						<div class="" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
-							<button class="">
-								<div class="">
+							<button class="container d-flex m-2">
+								<div class="mx-2">
 									<i class=""></i> 
 								</div>
+								<div class="border border-1 text-start p-2">
+									<p class="">Describe steps to reproduce an issue</p>
+									<div class="">
+										<p class="">#6 created in 2022-10-08</p>
+										<p class="" title="including as many details as possible.">including as many details as possible.</p>
+									</div>
+									
+								</div>
 								<div class="">
-									<div class="">Describe steps to reproduce an issue</div>
-									<div class="">
-										<div class="">#6 created in 2022-10-08</div>
-										<div class="" title="including as many details as possible.">including as many details as possible.</div>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
-									</div>
+									<span class="high btn m-2">High</span>
+									<span class="btn">Bug</span>
 								</div>
 							</button>
-							<button class="">
-								<div class="">
+
+							<button class="container d-flex m-2">
+								<div class="mx-2">
 									<i class=""></i> 
 								</div>
-								<div class="">
+								<div class="border border-2 text-start p-2">
 									<div class="">Provide access</div>
 									<div class="">
-										<div class="">#7 created in 2022-10-08</div>
-										<div class="" title="to the affected account and services if possible. It might be hard to reproduce the exact environment on a local machine.">to the affected account and services if possible. It mi...</div>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
+										<p class="">#7 created in 2022-10-08</p>
+										<p class="" title="to the affected account and services if possible. It might be hard to reproduce the exact environment on a local machine.">to the affected account and services if possible. It mi...</p>
 									</div>
 								</div>
-							</button>
-							<button class="">
 								<div class="">
-									<i class=""></i> 
-								</div>
-								<div class="">
-									<div class="">Provide environment information</div>
-									<div class="">
-										<div class="">#8 created in 2022-10-08</div>
-										<div class="" title="i.e., browser version, operating system version etc. Sometimes a list of installed browser plugins and extensions might be helpful as well.">i.e., browser version, operating system version etc. So...</div>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
-									</div>
-								</div>
-							</button>
-							<button class="">
-								<div class="">
-									<i class=""></i> 
-								</div>
-								<div class="">
-									<div class="">Provide a link to an exception and/or a stack trace</div>
-									<div class="">
-										<div class="">#9 created in 2022-10-08</div>
-										<div class="" title="as investigating those is usually the first step to take in resolving the problem.">as investigating those is usually the first step to tak...</div>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
-									</div>
+									<span class="high btn m-2">High</span>
+									<span class="btn">Bug</span>
 								</div>
 							</button>
 						</div>
 					</div>
 				</div>
+
+
+
 				<div class="">
-					<div class="">
+					<div style="min-width: 30vw ;" class="m-2">
 						<div class="">
 							<h4 class="">Done (<span id="done-tasks-count">4</span>)</h4>
 
 						</div>
+
 						<div class=" " id="done-tasks">
 							<!-- DONE TASKS HERE -->
 							<button class="">
@@ -246,27 +220,15 @@
 									</div>
 								</div>
 							</button>
-							<button  class="">
-								<div class="">
-									<i class=""></i> 
-								</div>
-								<div class="">
-									<div class="">Provide contact information</div>
-									<div class="">
-										<div class="">#13 created in 2022-10-08</div>
-										<div class="" title="of the person that reported the bug. This will not always be possible, but in some cases it might be advantageous and most effective if a developer can have a chat with a person that actually experienced the bug, especially if the steps to reproduce a problem are not deterministic.">of the person that reported the bug. This will not alwa...</div>
-									</div>
-									<div class="">
-										<span class="">High</span>
-										<span class="">Bug</span>
-									</div>
-								</div>
-							</button>
 						</div>
-					</div>
+						</div>
 				</div>
 			</div>
+
 			</div>
+
+
+
 		</div>
 		<!-- END #content -->
 		
