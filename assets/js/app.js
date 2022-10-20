@@ -3,7 +3,12 @@
  * 
  */
 
-tasks.forEach(task => console.log(task.title)) ;
+var btn = document.getElementById("showModal") ;
+console.log(btn) ;
+
+btn.addEventListener("click",()=>{
+    console.log("click");
+})
 
  function createTask() {
     // initialiser task form
