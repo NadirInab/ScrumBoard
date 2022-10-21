@@ -173,6 +173,7 @@
 				</div>
 		</div>
 	</div>
+
 		<div id="modal-task">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -181,14 +182,14 @@
 			</div>
 			<div class="modal-body">
 
-				<form class="d-block fw-bold">
+				<form id="form" class="d-block fw-bold">
 					<label for="titre" class="d-block">Title:</label>
-					<input class="form-control input-sm m-1 cart shadow-sm" type="text" name="title" id="title" value="title" required>
+					<input class="form-control input-sm m-1 cart shadow-sm" type="text" name="title" id="title" value="" placeholder="title" required>
 				  </br>
 
 					<label for="type" class="d-block">type:</label>
 					<div class="form-check">
-						<input class="form-check-input mx-2 cart shadow-sm" type="radio" name="type" id="feature" value="feature" selected>
+						<input class="form-check-input mx-2 cart shadow-sm" type="radio" name="type" id="feature" value="feature">
 						<label class="form-check-label">high</label>
 					</div>
 					<div class="form-check">
@@ -219,8 +220,8 @@
 			</div>
 
 			<div class="modal-footer">
-			  <button id="cancelBtn" class="btn btn-secondary">Cancel</button>
-			  <button id="saveBtn" class="btn btn-success">Save</button>
+			  <button  id="cancelBtn" class="close btn btn-secondary">Cancel</button>
+			  <button form="form" type="submit" id="saveBtn" class="btn btn-success">Save</button>
 			</div>
 		  </div>
 
