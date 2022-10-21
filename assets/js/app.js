@@ -1,16 +1,35 @@
-/**
- * In this file app.js you will find all CRUD functions name.
- * 
- */
 
 var btn = document.getElementById("showModal") ;
-console.log(btn) ;
+var modal = document.getElementById("modal-task") ;
+var close = document.querySelector(".close") ;
+var saveBtn = document.getElementById("saveBtn") ;
+var cancelBtn = document.getElementById("cancelBtn") ;
 
+console.log(close);
+
+
+close.addEventListener("click",()=>{
+    modal.style.display = "none" ;
+})
 btn.addEventListener("click",()=>{
-    console.log("click");
+    console.log("click") ;
+    modal.style.display = "block" ;
 })
 
- function createTask() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+function createTask() {
     // initialiser task form
 
     // Afficher le boutton save

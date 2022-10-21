@@ -173,6 +173,58 @@
 				</div>
 		</div>
 	</div>
+		<div id="modal-task">
+		<div class="modal-content">
+			<div class="modal-header">
+			  <h2>Add Task</h2>
+			  <span class="close">&times;</span>
+			</div>
+			<div class="modal-body">
+
+				<form class="d-block fw-bold">
+					<label for="titre" class="d-block">Title:</label>
+					<input class="form-control input-sm m-1 cart shadow-sm" type="text" name="title" id="title" value="title" required>
+				  </br>
+
+					<label for="type" class="d-block">type:</label>
+					<div class="form-check">
+						<input class="form-check-input mx-2 cart shadow-sm" type="radio" name="type" id="feature" value="feature" selected>
+						<label class="form-check-label">high</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input mx-2 cart shadow-sm" type="radio" name="type" id="bug" value="bug">
+						<label class="form-check-label">Feature</label>
+					</div>
+					<label for="propriete" class="d-block">Priority:</label>
+					<select class="form-select form-select-sm m-1 cart shadow-sm" name="priority" id="priority" >
+						<option value="1" selected>----please select----</option>
+						<option value="High">high</option>
+						<option value="Medium">medium</option>
+						<option value="Easy">simple</option>
+					</select>
+					<label for="status" class="d-block">Status:</label>
+					<select class="form-select form-select-sm m-1 cart shadow-sm" name="status" id="status" required>
+						<option value="1" selected>----please select----</option>
+						<option value="To Do">to do</option>
+						<option value="In Progress">in progress</option>
+						<option value="Done">done</option>
+					</select>
+			
+					<label for="date" class="d-block" >date:</label>
+					<input  class="form-control input-sm m-1 cart shadow-sm" type="date" name="date" id="date">
+	
+					<label for="description" class="d-block" >description:</label>
+					<textarea class="form-control m-1 cart shadow-sm" id="description" name="description" rows="5" cols="25"></textarea>
+				  </form>
+			</div>
+
+			<div class="modal-footer">
+			  <button id="cancelBtn" class="btn btn-secondary">Cancel</button>
+			  <button id="saveBtn" class="btn btn-success">Save</button>
+			</div>
+		  </div>
+
+	</div>
 		<!-- END #content -->
 
 		<!-- BEGIN scroll-top-btn -->
@@ -182,9 +234,7 @@
 	<!-- END #app -->
 	
 	<!-- TASK MODAL -->
-	<div class="modal fade" id="modal-task">
 
-	</div>
 	<!-- ================== BEGIN core-js ================== -->
 	<script src="assets/js/vendor.min.js"></script>
 	<script src="assets/js/app.min.js"></script>
