@@ -1,77 +1,3 @@
-var toDoTask = document.getElementById("to-do-tasks") ;
-var inProgresse = document.getElementById("in-progress-tasks") ;
-var done = document.getElementById("done-tasks") ;
-console.log(tasks);
-
-for(let i=0 ; i<tasks.length;i++){
-if (tasks[i].status == "Done") {
-    toDoTask.innerHTML += `<button class="card  d-flex flex-row justify-content-around align-items-center border-bottom border-muted p-2 border rounded-2 mb-2 cart shadow-sm" >
-  <div class="col-1">
-  <i class="bi bi-check2-square fs-3"></i>
-  </div>
-  <div class="col-11 d-flex justify-content-around align-items-center">
-      <div class=" col-9 card-body text-start">
-          <div class="card-title fs-5 "><strong> ${tasks[i].title} </strong></div>
-          <div class="card-subtitle mb-2 text-muted">#${i + 1} created in  ${tasks[i].date}</div>
-          <div class="card-text" title=" ${tasks[i].description}"> ${tasks[ i].description.substring(0, 40)}...</div>
-          <div>
-          <i class="bi bi-trash text-danger  me-1" onclick="deleteTask(${i})"></i>
-          <i class="bi bi-pen text-yelow me-1"  onclick="editTask(${i})"></i>
-          </div>
-      </div>
-      <div class="col-3 d-flex flex-column align-content-center">
-          <span class="btn  mb-1 text-white p-2 w-100 high" >${tasks[i].priority}</span>
-          <span class="btn btn-white bg-white p-2 border text-black w-100 bug">${tasks[i].type}</span>
-      </div>
-  </div>
-  </button>` ;
-  }
-   else if (tasks[i].status == "In Progress") {
-    inProgress.innerHTML += `<button class="card  d-flex flex-row justify-content-around align-items-center border-bottom border-muted p-2 border rounded-2 mb-2 cart shadow-sm" >
-  <div class="col-1">
-  <i class="spinner-border spinner-border-sm text-green me-1"></i>
-  </div>
-  <div class="col-11 d-flex justify-content-around align-items-center">
-      <div class="col-9 card-body text-start">
-          <div class="card-title fs-5 "><strong> ${ tasks[i].title} </strong></div>
-          <div class="card-subtitle mb-2 text-muted">#${i + 1} created in  ${tasks[i].date}</div>
-          <div class="card-text" title=" ${tasks[i].description}" > ${tasks[i].description.substring(0, 40)}...</div>
-          <div>
-          <i class="bi bi-trash text-danger me-1" onclick="deleteTask(${i})"></i>
-          <i class="bi bi-pen text-yelow me-1"  onclick="editTask(${i})"></i>
-          </div>
-      </div>
-      <div class="col-3 d-flex flex-column align-content-center">
-      <span class="btn  mb-1 text-white p-2 w-100 high" >${tasks[i].priority}</span>
-      <span class="btn btn-white bg-white p-2 border text-black w-100 bug">${ tasks[i].type }</span>
-      </div>
-  </div>
-  </button>`;
-  } else if (tasks[i].status == "To Do") {
-    toDo.innerHTML += `<button class="card  d-flex flex-row justify-content-around align-items-center border-bottom border-muted p-2 border rounded-2 mb-2 cart shadow-sm" >
-  <div class="col-1">
-      <i class="bi bi-question-circle fs-3"></i>
-  </div>
-  <div class="col-11 d-flex justify-content-around align-items-center">
-      <div class="col-9 card-body text-start">
-          <div class="card-title fs-5 "><strong> ${tasks[i].title} </strong></div>
-          <div class="card-subtitle mb-2 text-muted">#${i + 1} created in  ${tasks[i].date}</div>
-          <div class="card-text" title=" ${tasks[i].description}" > ${tasks[i].description.substring(0, 40)}...</div>
-          <div>
-          <i class="bi bi-trash text-danger me-1" onclick="deleteTask(${i})"></i>
-          <i class="bi bi-pen text-yelow me-1"  onclick="editTask(${i})"></i>
-          </div>
-      </div>
-      <div class="col-3 d-flex flex-column align-content-center">
-      <span class="btn  mb-1 text-white p-2 w-100 high" >
-      ${tasks[i].priority}</span>
-      <span class="btn btn-white bg-white p-2 border text-black w-100 bug">${tasks[i].type}</span>
-      </div>
-  </div>
-  </button>`;
-  }
-}
-
 
 var showModal = document.getElementById("showModal") ;
 var modal = document.getElementById("modal-task") ;
@@ -80,106 +6,99 @@ var saveBtn = document.getElementById("saveBtn") ;
 var cancelBtn = document.getElementById("cancelBtn") ;
 var addTaskForm = document.getElementById("form") ;
 
-// fetch data from yteh form .
+var modalFooter = document.getElementById("modal-footer") ;
 
+
+var toDoTask = document.getElementById("to-do-tasks") ;
+var inProgress = document.getElementById("in-progress-tasks") ;
+var done = document.getElementById("done-tasks") ;
+
+
+console.log(tasks) ;
+
+addTaskForm.addEventListener("submit",saveTask) ;
+// displayTasks() ;
 createTask() ;
-saveTask() ;
 
 
 function createTask() {
+    initTaskForm();
     showModal.addEventListener("click",()=>{
         modal.style.display = "block" ;
     }) ;
-
     close.addEventListener("click",()=>{
         modal.style.display = "none" ;
     }) ;
-    // initialiser task form
-
-    // Afficher le boutton save
-
-    // Ouvrir modal form
 }
 
 
-function saveTask() {
-
+function saveTask(event) {
+    event.preventDefault() ;
+    console.log("here save task")
     var title = document.getElementById("title") ;
     var types = document.querySelectorAll('input[type=radio]') ;
     var priority = document.getElementById("priority") ;
     var statuS = document.getElementById("status") ;
     var date = document.getElementById("date") ;
     var description = document.getElementById("description") ;
-
-    addTaskForm.addEventListener("submit",(e)=>{
-        e.preventDefault() ;
-        for(let i =0 ; i< types.length ;i++){
-           var checkedRadio = (types[i].checked == true) ? types[i].value : null ;
-        }
-        var priorityValue = priority.options[priority.selectedIndex].value ;
-        var statusValue = statuS.options[statuS.selectedIndex].value ;
-    
-        toDoObject.title = title.value ;
-        toDoObject.type = checkedRadio ;
-        toDoObject.priority = priorityValue ;
-        toDoObject.status = statusValue ;
-        toDoObject.date = date.value ;
-        toDoObject.description = description.value ;
-        toDoData.push(toDoObject) ;
+      
+    for(let i =0 ; i< types.length ;i++) var checkedRadio = (types[i].checked == true) ? types[i].value : null ;
+    var priorityValue = priority.options[priority.selectedIndex].value ;
+    var statusValue = statuS.options[statuS.selectedIndex].value ;
         
-        console.log(toDoData);
-    } ) ;
-    var toDoData = [] ;
     var toDoObject = {
-    title :"",
-    type : "" ,
-    priority : "",
-    status :"",
-    date :"",
-    description :"" 
-}
-    // Recuperer task attributes a partir les champs input
+    title :title.value,
+    type :  checkedRadio ,
+    priority : priorityValue,
+    status :statusValue,
+    date :date.value,
+    description :description.value 
+    }   
 
-    // Créez task object
+    tasks.push(toDoObject) ;
+    console.log(toDoObject) ;
+    console.log(tasks.length) ;
+    initTaskForm() ;
+    modal.style.display = "none" ;
+    displayTasks() ;
 
-    // Ajoutez object au Array
-
-    // refresh tasks ==> add the added data to the page . 
-
-
-    
 }
 
-function editTask(index) {
-    // Initialisez task form
+function editTask(i) {
 
-    // Affichez updates
-
-    // Delete Button
-
-    // Définir l’index en entrée cachée pour l’utiliser en Update et Delete
-
-    // Definir FORM INPUTS
-
-    // Ouvrir Modal form
+    document.getElementById("title").value = tasks[i].title;
+    if (tasks[i].type === "Bug") {
+        document.getElementById("bug").checked = true;
+      } else {
+        document.getElementById("feature").checked = true;
+    }
+    document.getElementById("priority").value = tasks[i].priority;
+    document.getElementById("status").value = tasks[i].status;
+    document.getElementById("date").value = tasks[i].date;
+    document.getElementById("description").value = tasks[i].description;
+    modalFooter.innerHTML = `<button form="form" type="submit" id="edit" onclick="updateTask(${i})" class="btn high shadow-sm "> Save edit changes </button> `
+    modal.style.display = "block" ;
 }
 
-function updateTask() {
-    // GET TASK ATTRIBUTES FROM INPUTS
+function updateTask(i) {
+    let toDoObject = {
+      title: document.getElementById("title").value,
+      type: radiocheck().value,
+      priority: document.getElementById("priority").value,
+      status: document.getElementById("status").value,
+      date: document.getElementById("date").value,
+      description: document.getElementById("description").value,
+    };
+    tasks[i] = toDoObject;
 
-    // Créez task object
-
-    // Remplacer ancienne task par nouvelle task
-
-    // Fermer Modal form
-
+    modal.style.display = "none" ;
     // Refresh tasks
-    
+    displayTasks() ;
 }
 
-function deleteTask() {
-    // Get index of task in the array
-
+function deleteTask(i) {
+    tasks.splice(i,1);
+    console.log("hiii!!!! "+ i ) ;
     // Remove task from array by index splice function
 
     // close modal form
@@ -187,14 +106,98 @@ function deleteTask() {
     // refresh tasks
 }
 
-function initTaskForm() {
-    // Clear task form from data
 
-    // Hide all action buttons
+
+function initTaskForm() {
+    addTaskForm.reset()
 }
 
 function reloadTasks() {
-    // Remove tasks elements
+        inProgress.innerHTML = "";
+        done.innerHTML = "";
+        toDoTask.innerHTML = "";
+}
 
-    // Set Task count
+function displayTasks(){
+    reloadTasks() ;
+    var toDoCounter = 0 ;var inProgressCounter =0 ;var doneCounter =0 ; 
+    for(let i=0 ; i<tasks.length;i++){
+        if (tasks[i].status == "To Do") {
+            toDoCounter++ ;
+            console.log(toDoCounter)
+            toDoTask.innerHTML += `
+            <button class="tasks d-flex m-2">
+                <div class="mx-2">
+                    <i class="bi bi-question-circle-fill"></i>
+                </div>
+                <div class="border border-1 text-start p-2">
+                    <p class="fw-bold">${tasks[i].title}</p>
+                    <div class="">
+                        <p class="fw-light">${tasks[i].date}</p>
+                        <p class="fw-normal" >${tasks[i].description.slice(0,30)}</p>
+                        <i class="bi bi-trash-fill me-1" onclick="deleteTask(${i})"></i>
+                        <i class="bi bi-pencil-square me-1"  onclick="editTask(${i})"></i>
+                    </div>
+                </div>	
+                <div class="mt-3">
+                    <span class="high btn m-2">${tasks[i].priority}</span>
+                    <span class="btn">${tasks[i].type}</span>
+                </div>
+            </button>
+            `;
+          }
+           else if (tasks[i].status == "In Progress") {
+            inProgressCounter++ ;
+            console.log(inProgressCounter)
+            inProgress.innerHTML += `
+            <button class="tasks d-flex m-2">
+            <div class="mx-2">
+                <i class="spinner-border spinner-border-sm-text-green mt-3"></i> 
+            </div>
+            <div class="border border-1 text-start p-2">
+                <p class="">${tasks[i].title}</p>
+                <div class="">
+                    <p class="">${tasks[i].date}</p>
+                    <p class="">${tasks[i].description.slice(0,30)}</p>
+                    <i class="bi bi-trash-fill me-1" onclick="deleteTask(${i})"></i>
+                    <i class="bi bi-pencil-square me-1"  onclick="editTask(${i})"></i>
+                </div>
+            </div>
+            <div class="mt-3">
+                <span class="high btn m-2">${tasks[i].priority}</span>
+                <span class="btn">${tasks[i].type}</span>
+            </div>
+        </button>
+            `;
+          } else if (tasks[i].status == "Done") {
+            doneCounter++ ;
+            console.log(doneCounter) ;
+           done.innerHTML += ` 
+           <button class="tasks d-flex m-2">
+            <div class="mx-2">
+               <i class="bi bi-check-circle-fill"></i>
+           </div>
+           <div class="border border-1 text-start p-2">
+               <p class="fw-bold">${tasks[i].title}</p>
+               <div class="">
+                   <p class="fw-light">${tasks[i].date}</p>
+                   <p class="fw-normal" >${tasks[i].description.slice(0,30)}</p>
+                   <i class="bi bi-trash-fill me-1" onclick="deleteTask(${i})"></i>
+                   <i class="bi bi-pencil-square me-1"  onclick="editTask(${i})"></i>
+               </div>
+           </div>
+           <div class="mt-3">
+               <span class="high btn m-2">${tasks[i].priority}</span>
+               <span class="btn ">${tasks[i].type}</span>
+           </div>
+        </button> `
+    }
+        } ;
+
+    var toDotasksCount = document.getElementById("to-do-tasks-count") ;
+    var inProgressCount= document.getElementById("in-progress-tasks-count") ;
+    var doneTasksCount = document.getElementById("done-tasks-count") ;
+    toDotasksCount.innerHTML = toDoCounter ;
+    inProgressCount.innerHTML = inProgressCounter ;
+    doneTasksCount.innerHTML = doneCounter ;
 }

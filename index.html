@@ -11,6 +11,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 	<link href="assets/css/vendor.min.css" rel="stylesheet" />
 	<link href="assets/css/default/app.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	<link href="assets/css/style.css" rel="stylesheet" />
 	<link rel="stylesheet" href="/assets/css/style.css">
 	<!-- JavaScript Bundle with Popper -->
@@ -38,7 +39,7 @@
 					<div  class="m-2"> 
 						<div class="m-2"> 
 						<div  class="toDo container border border-top-0 p-2 rounded-2 ">
-							<h4 class="">To do (<span id="to-do-tasks-count">3</span>)</h4>
+							<h4 class="">To do (<span id="to-do-tasks-count"></span>)</h4>
 						</div>
 
 						<div class="tasksContainer border border-light" id="to-do-tasks">
@@ -58,44 +59,7 @@
 									<span class="btn">Feature</span>
 								</div>
 							</button>
-
-							<button class="tasks d-flex m-2">
-								<div class="mx-2">
-									<i class="bi bi-question-circle-fill"></i>
-								</div>
-								<div class="border border-1 text-start p-2">
-									<p class="">Consider creating an acceptance criteria list</p>
-									<div class="">
-										<p class="">#2 created in 2022-10-08</p>
-										<p class="" title="Descriptive requirements are very helpful when it comes to understanding the context of a problem, yet finally it is good to precisely specify what is expected. Thus the developer will not have to look for the actual requirements in a long, descriptive text but he will be able to easily get to the essence. One might find that sometimes — when acceptance criteria are well defined — there is little or no need for any additional information. Example:
-											a) User navigates to “/accounts” and clicks on red download CSV button
-											b) Popup appears with two buttons: “This year” and “Last year”
-											c) If user clicked on “Last year” download is initiated
-											d) CSV downloaded includes following columns…">Descriptive requirements are very helpful when it comes...</p>
-									</div>
-								</div>
-								<div class="mt-3">
-									<span class="high btn m-1">High</span>
-									<span class="btn">Feature</span>
-								</div>
-							</button>
-
-							<button class="tasks d-flex m-2">
-								<div class="mx-2">
-									<i class="bi bi-question-circle-fill"></i>
-								</div>
-								<div class="border border-1 text-start p-2">
-									<p class="">Provide examples, credentials, etc</p>
-									<div class="">
-										<p class="">#3 created in 2022-10-08</p>
-										<p class="" title="If the expectation is to process or generate some file — attach an example of such 					 file. If the goal is to integrate what is being developed with some service, ensure your devs have access to this service and its documentation. This list could go on and on — the bottom line is — if there is something that our developer might make use of, try to foresee it and provide them with (access to) it.">If the expectation is to process or generate some file ...</p>
-									</div>
-								</div>
-								<div class="mt-3">
-									<span class="high btn m-1">High</span>
-									<span class="btn">Feature</span>
-								</div>
-							</button>
+						
 						</div>
 					</div>
 				</div>
@@ -104,7 +68,7 @@
 				<div  class=" m-2">
 					<div class="m-2">
 						<div class="inProgress container border border-top-0 p-2 rounded-2 ">
-							<h4 class="">In Progress (<span id="in-progress-tasks-count">2</span>)</h4>
+							<h4 class="">In Progress (<span id="in-progress-tasks-count"></span>)</h4>
 						</div>
 						<div class="tasksContainer border border-light" id="in-progress-tasks">
 							<button class="tasks d-flex m-2">
@@ -123,23 +87,6 @@
 									<span class="btn">Bug</span>
 								</div>
 							</button>
-
-							<button class="tasks d-flex m-2">
-								<div class="mx-2">
-									<i class="spinner-border spinner-border-sm-text-green mt-3"></i> 
-								</div>
-								<div class="border border-1 text-start p-2">
-									<p class="">Provide access</p>
-									<div class="">
-										<p class="">#7 created in 2022-10-08</p>
-										<p class="" title="to the affected account and services if possible. It might be hard to reproduce the exact environment on a local machine.">to the affected account and services if possible. It mi...</p>
-									</div>
-								</div>
-								<div class="mt-3">
-									<span class="high btn m-2">High</span>
-									<span class="btn">Bug</span>
-								</div>
-							</button>
 						</div>
 					</div>
 				</div>
@@ -148,7 +95,7 @@
 				<div class=" m-2">
 					<div  class="m-2"> 
 						<div class="done container border border-top-0 p-2 rounded-2">
-							<h4 class="">Done (<span id="done-tasks-count">2</span>)</h4>
+							<h4 class="">Done (<span id="done-tasks-count"></span>)</h4>
 						</div>
 						<div class="tasksContainer border border-light w-100" id="done-tasks">
 							<button class="tasks d-flex m-2">
@@ -183,7 +130,7 @@
 			<div class="modal-body">
 
 				<form id="form" class="d-block fw-bold">
-					<label for="titre" class="d-block">Title:</label>
+					<label for="title" class="d-block">Title:</label>
 					<input class="form-control input-sm m-1 cart shadow-sm" type="text" name="title" id="title" value="" placeholder="title" required>
 				  </br>
 
@@ -196,7 +143,7 @@
 						<input class="form-check-input mx-2 cart shadow-sm" type="radio" name="type" id="bug" value="bug">
 						<label class="form-check-label">Feature</label>
 					</div>
-					<label for="propriete" class="d-block">Priority:</label>
+					<label for="priority" class="d-block">Priority:</label>
 					<select class="form-select form-select-sm m-1 cart shadow-sm" name="priority" id="priority" >
 						<option value="1" selected>----please select----</option>
 						<option value="High">high</option>
@@ -219,9 +166,9 @@
 				  </form>
 			</div>
 
-			<div class="modal-footer">
-			  <button  id="cancelBtn" class="close btn btn-secondary">Cancel</button>
-			  <button form="form" type="submit" id="saveBtn" class="btn btn-success">Save</button>
+			<div id="modal-footer" class="modal-footer">
+			  <button  form="form" id="cancelBtn" class="close btn btn-secondary">Cancel</button>
+			  <button id="saveBtn" form="form" type="submit"  class="btn btn-success">Save</button>
 			</div>
 		  </div>
 
