@@ -5,7 +5,6 @@ var close = document.querySelector(".close") ;
 var saveBtn = document.getElementById("saveBtn") ;
 var cancelBtn = document.getElementById("cancelBtn") ;
 var addTaskForm = document.getElementById("form") ;
-
 var modalFooter = document.getElementById("modal-footer") ;
 
 
@@ -15,7 +14,7 @@ var done = document.getElementById("done-tasks") ;
 
 
 console.log(tasks) ;
-
+displayTasks() ;
 addTaskForm.addEventListener("submit",saveTask) ;
 // displayTasks() ;
 createTask() ;
@@ -27,6 +26,9 @@ function createTask() {
         modal.style.display = "block" ;
     }) ;
     close.addEventListener("click",()=>{
+        modal.style.display = "none" ;
+    }) ;
+    cancelBtn.addEventListener("click",()=>{
         modal.style.display = "none" ;
     }) ;
 }
@@ -78,12 +80,14 @@ function editTask(i) {
     document.getElementById("description").value = tasks[i].description;
     modalFooter.innerHTML = `<button form="form" type="submit" id="edit" onclick="updateTask(${i})" class="btn high shadow-sm "> Save edit changes </button> `
     modal.style.display = "block" ;
+   
 }
 
 function updateTask(i) {
+    
     let toDoObject = {
       title: document.getElementById("title").value,
-      type: radiocheck().value,
+      type: "hiiiiiop"  ,
       priority: document.getElementById("priority").value,
       status: document.getElementById("status").value,
       date: document.getElementById("date").value,
@@ -99,6 +103,8 @@ function updateTask(i) {
 function deleteTask(i) {
     tasks.splice(i,1);
     console.log("hiii!!!! "+ i ) ;
+    console.log(tasks.length)
+    displayTasks() ;
     // Remove task from array by index splice function
 
     // close modal form
@@ -124,7 +130,6 @@ function displayTasks(){
     for(let i=0 ; i<tasks.length;i++){
         if (tasks[i].status == "To Do") {
             toDoCounter++ ;
-            console.log(toDoCounter)
             toDoTask.innerHTML += `
             <button class="tasks d-flex m-2">
                 <div class="mx-2">
@@ -148,7 +153,6 @@ function displayTasks(){
           }
            else if (tasks[i].status == "In Progress") {
             inProgressCounter++ ;
-            console.log(inProgressCounter)
             inProgress.innerHTML += `
             <button class="tasks d-flex m-2">
             <div class="mx-2">
@@ -171,7 +175,6 @@ function displayTasks(){
             `;
           } else if (tasks[i].status == "Done") {
             doneCounter++ ;
-            console.log(doneCounter) ;
            done.innerHTML += ` 
            <button class="tasks d-flex m-2">
             <div class="mx-2">
