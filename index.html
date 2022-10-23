@@ -36,30 +36,13 @@
 			</div>
 
 			<div class="d-flex">
-					<div  class="m-2"> 
-						<div class="m-2"> 
+				<div  class="m-2"> 
+					<div class="m-2"> 
 						<div  class="toDo container border border-top-0 p-2 rounded-2 ">
 							<h4 class="">To do (<span id="to-do-tasks-count"></span>)</h4>
 						</div>
-
-						<div class="tasksContainer border border-light" id="to-do-tasks">
-							<button class="tasks d-flex m-2">
-								<div class="mx-2">
-									<i class="bi bi-question-circle-fill"></i>
-								</div>
-								<div class="border border-1 text-start p-2">
-									<p class="fw-bold">Keep all the updated requirements in one place</p>
-									<div class="">
-										<p class="fw-light">#1 created in 2022-10-08</p>
-										<p class="fw-normal" title="There is hardly anything more frustrating than having to look for current requirements in tens of comments under the actual description or having to decide which commenter is actually authorized to change the requirements. The goal here is to keep all the up-to-date requirements and details in the main/primary description of a task. Even though the information in comments may affect initial criteria, just update this primary description accordingly.">There is hardly anything more frustrating than having t...</p>
-									</div>
-								</div>	
-								<div class="mt-3">
-									<span class="high btn m-2">High</span>
-									<span class="btn">Feature</span>
-								</div>
-							</button>
-						
+					 	<div class="tasksContainer border border-light" id="to-do-tasks">
+	
 						</div>
 					</div>
 				</div>
@@ -71,22 +54,7 @@
 							<h4 class="">In Progress (<span id="in-progress-tasks-count"></span>)</h4>
 						</div>
 						<div class="tasksContainer border border-light" id="in-progress-tasks">
-							<button class="tasks d-flex m-2">
-								<div class="mx-2">
-									<i class="spinner-border spinner-border-sm-text-green mt-3"></i>
-								</div>
-								<div class="border border-1 text-start p-2">
-									<p class="">Describe steps to reproduce an issue</p>
-									<div class="">
-										<p class="">#6 created in 2022-10-08</p>
-										<p class="" title="including as many details as possible.">including as many details as possible.</p>
-									</div>									
-								</div>
-								<div class="mt-3">
-									<span class="high btn m-2">High</span>
-									<span class="btn">Bug</span>
-								</div>
-							</button>
+							
 						</div>
 					</div>
 				</div>
@@ -98,23 +66,7 @@
 							<h4 class="">Done (<span id="done-tasks-count"></span>)</h4>
 						</div>
 						<div class="tasksContainer border border-light w-100" id="done-tasks">
-							<button class="tasks d-flex m-2">
-								<div class="mx-2">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="border border-1 text-start p-2">
-									<p class="fw-bold">Provide access to logs</p>
-									<div class="">
-										<p class="fw-light">#10 created in 2022-10-08</p>
-										<p class="fw-normal" title="as they can be helpful in reproducing the steps that caused the problem in the first place.">as they can be helpful in reproducing the steps that ca...</p>
-									</div>
-								</div>
-								<div class="mt-3">
-									<span class="high btn m-2">High</span>
-									<span class="btn ">Bug</span>
-								</div>
-							</button>
-
+						
 						</div>
 					</div>
 				</div>
@@ -128,30 +80,29 @@
 			  <span class="close">&times;</span>
 			</div>
 			<div class="modal-body">
-
 				<form id="form" class="d-block fw-bold">
 					<label for="title" class="d-block">Title:</label>
-					<input class="form-control input-sm m-1 cart shadow-sm" type="text" name="title" id="title" value="" placeholder="title" required>
+					<input class="form-control input-sm m-1 cart shadow-sm" type="text" name="title" id="title" value="" placeholder="title">
 				  </br>
 
 					<label for="type" class="d-block">type:</label>
 					<div class="form-check">
 						<input class="form-check-input mx-2 cart shadow-sm" type="radio" name="type" id="feature" value="feature">
-						<label class="form-check-label">high</label>
+						<label class="form-check-label">Feature</label>
 					</div>
 					<div class="form-check">
 						<input class="form-check-input mx-2 cart shadow-sm" type="radio" name="type" id="bug" value="bug">
-						<label class="form-check-label">Feature</label>
+						<label class="form-check-label">High</label>
 					</div>
 					<label for="priority" class="d-block">Priority:</label>
 					<select class="form-select form-select-sm m-1 cart shadow-sm" name="priority" id="priority" >
 						<option value="1" selected>----please select----</option>
 						<option value="High">high</option>
 						<option value="Medium">medium</option>
-						<option value="Easy">simple</option>
+						<option value="Easy">Easy</option>
 					</select>
 					<label for="status" class="d-block">Status:</label>
-					<select class="form-select form-select-sm m-1 cart shadow-sm" name="status" id="status" required>
+					<select class="form-select form-select-sm m-1 cart shadow-sm" name="status" id="status">
 						<option value="1" selected>----please select----</option>
 						<option value="To Do">to do</option>
 						<option value="In Progress">in progress</option>
@@ -173,16 +124,8 @@
 		  </div>
 
 	</div>
-		<!-- END #content -->
-
-		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
-		<!-- END scroll-top-btn -->
 	</div>
-	<!-- END #app -->
-	
-	<!-- TASK MODAL -->
-
 	<!-- ================== BEGIN core-js ================== -->
 	<script src="assets/js/vendor.min.js"></script>
 	<script src="assets/js/app.min.js"></script>

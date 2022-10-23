@@ -1,7 +1,6 @@
-.pace {
+/* .pace {
     display: none;
-}
-
+} */
 .main-style {
     min-height: 100vh;
     background: url(../img/cover/cover-scrum-board.png) no-repeat fixed;
@@ -47,9 +46,6 @@ button.addTask{
     max-width: 100%;
 }
 
-
-
-
 /* modal  */
 #modal-task{
     display: none;
@@ -81,14 +77,10 @@ span.close{
     background-color:  #E6EEC7;
 }
 
-/* .modal-body input,label,option{
-    background-color:  rgb(223, 232, 204,0.8); 
-} */
-
   /* Modal Footer */
   .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color:rgb(223, 232, 204,0.8);
     color: white;
   }
   
@@ -105,7 +97,7 @@ span.close{
     animation-name: animatetop;
     animation-duration: 0.4s
   }
-  
+
   /* Add Animation */
   @keyframes animatetop {
     from {top: -300px; opacity: 0}
